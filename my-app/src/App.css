@@ -1,0 +1,23 @@
+
+@font-face{
+    font-family: 'Prompt-Bold.ttf';
+    src: url(/my-app/public/fonts/Prompt-Bold.ttf);
+}
+
+@font-face{
+    font-family: 'Prompt-Medium.ttf';
+    src: url(/my-app/public/fonts/Prompt-Medium.ttf);
+}
+
+@font-face{
+    font-family: 'Prompt-Regular.ttf';
+    src: url(/my-app/public/fonts/Prompt-Regular.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prompt-Medium';
+}
+
+.title {
+    font-family: 'Prompt-Regular';
+}
