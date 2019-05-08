@@ -8,9 +8,6 @@ import About from "./containers/About"
 
 class App extends Component {
 
-    constructor(props) {
-      super(props)
-    }
 
     renderRouter(){
       return(

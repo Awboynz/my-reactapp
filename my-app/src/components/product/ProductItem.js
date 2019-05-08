@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Button } from 'reactstrap'
 
   class ProductItem extends React.Component{  
- /* export default class ProductItem extends React.Component { */
 
     constructor(props){
         super(props);
@@ -12,7 +11,6 @@ import { Button } from 'reactstrap'
     doSomething(productName){
         console.log(productName);
     } 
-
     
     render(){
         const {productName, unitPrice, thumbnail} = this.props.product;

@@ -36,8 +36,8 @@ class Home extends Component {
 
       // axios framework
          axios.get("http://localhost:3001/products").then(res => {
-          console.log(res.data)
-          { this.setState({ products: res.data})}
+         this.setState({ products: res.data})
+         
     }); 
   }
       
@@ -52,6 +52,5 @@ class Home extends Component {
     );
   }
 }
-
 
 export default Home;
