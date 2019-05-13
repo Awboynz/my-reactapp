@@ -21,7 +21,11 @@ import { Button } from 'reactstrap'
                 <p className="title text-right">{unitPrice}</p>
 
                  {/* ใช้งาน Class ปุ่มของ Reactstrap */}
-                <Button outline color="primary" onClick={() => this.props.onAddOrder(this.props.product)} block>Buy</Button>{' '}
+                <Button outline color="primary" onClick={() => this.props.onAddOrder(this.props.product)} >ซื้อ</Button>{' '}
+            
+                <Button outline color="info" >แก้ไข</Button>{' '}
+
+                <Button outline color="danger" onClick={() => this.props.onDelProduct(this.props.product)} >ลบรายการ</Button>{' '}
             </div>
         )
     }
