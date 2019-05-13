@@ -21,7 +21,7 @@ class Order extends Component {
     }
 
     delOrder(order){
-        axios.delete("http://localhost:3001/orders" + order.id).then(res=>{
+        axios.delete("http://localhost:3001/orders/" + order.id).then(res=>{
             axios.get("http://localhost:3001/orders").then(
                 res => {
                     this.setState({orders : res.data})
@@ -60,14 +60,14 @@ class Order extends Component {
     render(){
         return (
             <div>
-                <header />
+                <Header />
                     <div className="container-fluid">
                         <h1>รายการสั่งซื้อ</h1>
                         <div className="row">
                             {this.showOrders()}
                         </div>
                     </div>
-                <footer />
+                <Footer />
             </div>
         )
     }
