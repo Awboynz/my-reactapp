@@ -10,8 +10,6 @@ class Calculator extends Component {
 
                 return (
                     <li className="text-right text-dark title">
-
-
                         <strong><span className="text-uppercase">{order.product.productName} x {order.quantity} = </span></strong>
 
                         {/* จัดการ style ของราคายอดรวม */}
@@ -32,15 +30,15 @@ class Calculator extends Component {
                 <h1 className="text-right">{totalPrice} บาท</h1>
                 <strong><p className="text-dark text-uppercase text-left text-bold"> รายการที่เลือก</p></strong>
                 <hr />
-                <ul>
-                    <li className="list-unstyled">
+                <ul className="list-unstyled">
+                    
                     {this.showOrders(orders)}
-                    </li>
+                   
                 </ul>
                 <hr />
                 {/* <button className="btn btn-block btn-danger title" onClick={()=> this.props.onConfirmOrder()}> ยืนยัน</button> */}
 
-                <button type="button" class="btn btn-block btn-danger title" data-toggle="modal" data-target="#myModal" onClick={()=> this.props.onConfirmOrder()}> ยืนยัน</button>
+                <button type="button" className="btn btn-block btn-danger title" data-toggle="modal" data-target="#myModal" onClick={()=> this.props.onConfirmOrder()}> ยืนยัน</button>
                 <button className="btn btn-block btn-secondary title" onClick={()=> this.props.onCancelOrder()} >ยกเลิก</button>
             </div>
         );
