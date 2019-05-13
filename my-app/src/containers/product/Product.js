@@ -39,13 +39,13 @@ render() {
              <div className="container-fluid">
                     <div className="row">
                         <div className="col-6">
-                        <h1>สินค้า</h1>
+                            <h1>สินค้า</h1>
                         </div>
-                 <div className="col-6">
-                    <button className="btn btn-success title float-right">เพิ่มสินค้า</button>
+                     <div className="col-6">
+                         <button className="btn btn-success title float-right">เพิ่มสินค้า</button>
+                    </div>
                 </div>
-                </div>
-                <ProductList product={this.state.products} 
+                     <ProductList products={this.state.products} 
                     onDelProduct={this.delProduct}
                     />
             </div>
