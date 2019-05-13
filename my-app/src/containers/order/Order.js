@@ -1,6 +1,8 @@
+
 import React, { Component } from "react"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+/* import Order from "../../containers/order/Order" */
 import axios from "axios"
 
 
@@ -20,7 +22,7 @@ class Order extends Component {
 
     delOrder(order){
         axios.delete("http://localhost:3001/orders" + order.id).then(res=>{
-            axios.delete("http://localhost:3001/orders").then(
+            axios.get("http://localhost:3001/orders").then(
                 res => {
                     this.setState({orders : res.data})
                 }
@@ -32,12 +34,23 @@ class Order extends Component {
         return this.state.orders && this.state.orders.map(order => {
             const date = new Date(order.orderedDate)
             return (
-                <div className="col-md-3">
+                <div key={order.id}  className="col-md-3">
                     <hr />
                     <p>
                         <button className="btn btn-danger btn-sm title" onClick={()=> this.delOrder(order)}>X</button>
                     </p>
-                    <h5>วันที่ {date.toLocaleDateString} </h5>
+                    <h5>วันที่ {date.toLocaleDateString()} {date.toLocaleTimeString()} </h5>
+                    <ul>
+                        {order.orders && order.orders.map(record => {
+                            return (
+                                <li key={record.product.id}> 
+                                    {record.product.productName} X {record.quantity} = {record.product.unitPrice * record.quantity}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    <p className="title">ยอดรวม {order.totalPrice}</p>
+                
                 </div>
             )
         })
@@ -47,19 +60,16 @@ class Order extends Component {
     render(){
         return (
             <div>
-                <header>
+                <header />
                     <div className="container-fluid">
                         <h1>รายการสั่งซื้อ</h1>
                         <div className="row">
                             {this.showOrders()}
                         </div>
                     </div>
-                </header>
-                <footer></footer>
+                <footer />
             </div>
         )
     }
-
-
 }
 export default Order
