@@ -15,9 +15,11 @@ class Order extends Component {
   
     componentDidMount(){
 
-        axios.get("http://localhost:3001/orders").then(res =>
-        this.setState({orders: res.data})
-        )
+        axios.get("http://localhost:3001/orders").then
+        (res =>{
+             this.setState({orders: res.data})
+        }
+    )
     }
 
     delOrder(order){
@@ -36,7 +38,7 @@ class Order extends Component {
             return (
                 <div key={order.id}  className="col-md-3">
                     <hr />
-                    <p>
+                    <p className="text-right">
                         <button className="btn btn-danger btn-sm title" onClick={()=> this.delOrder(order)}>X</button>
                     </p>
                     <h5>วันที่ {date.toLocaleDateString()} {date.toLocaleTimeString()} </h5>
@@ -45,8 +47,7 @@ class Order extends Component {
                             return (
                                 <li key={record.product.id}> 
                                     {record.product.productName} X {record.quantity} = {record.product.unitPrice * record.quantity}
-                                </li>
-                            )
+                                </li>)
                         })}
                     </ul>
                     <p className="title">ยอดรวม {order.totalPrice}</p>
