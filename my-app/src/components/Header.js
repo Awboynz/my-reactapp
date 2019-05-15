@@ -37,6 +37,12 @@ class Header extends Component {
               </div>
               <div className="col-md-4 text-right">
                   <h5 className="text-muted mt-4">{this.state.date.toLocaleTimeString()}</h5>
+                  <ul className="list-inline">
+                      <li className="list-inline-item title"><a href="/">Home</a></li>
+                      <li className="list-inline-item title"><a href="/orders">Order</a></li>
+                      <li className="list-inline-item title"><a href="/products">Product</a></li>
+                      <li className="list-inline-item title"><a href="/about">About</a></li>
+                  </ul>
               </div>
           </div>
       </div>

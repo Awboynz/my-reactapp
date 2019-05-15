@@ -15,8 +15,7 @@ class Order extends Component {
   
     componentDidMount(){
 
-        axios.get("http://localhost:3001/orders").then
-        (res =>{
+        axios.get("http://localhost:3001/orders").then(res =>{
              this.setState({orders: res.data})
         }
     )

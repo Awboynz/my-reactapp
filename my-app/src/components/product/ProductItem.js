@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import { Button } from 'reactstrap'
 
-  class ProductItem extends React.Component{  
+  class ProductItem extends /* React.Component */ Component{  
 
-    constructor(props){
+   /*  constructor(props){
         super(props);
         
-    }
+    } */
 
     doSomething(productName){
         console.log(productName);
