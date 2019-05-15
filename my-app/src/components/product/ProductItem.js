@@ -16,7 +16,7 @@ import { Button } from 'reactstrap'
         const {productName, unitPrice, thumbnail} = this.props.product;
         return(
             <div className="col-md-3 col-sm-6">
-                <img className="img-fluid img-thumbnail" src={thumbnail} />
+                <img className="img-fluid img-thumbnail" src={thumbnail} alt="thumnail" />
                 <h5 className="mt-2">{productName}</h5>
                 <p className="title text-right">{unitPrice}</p>
 
@@ -35,5 +35,4 @@ import { Button } from 'reactstrap'
         )
     }
 }
-
   export default ProductItem;  
