@@ -42,16 +42,13 @@ class Home extends Component {
     }); 
   }
 
-
-
- 
       
   render() {
     return (
         <div>
            <Header />
            <Monitor products= {this.state.products}/>
-           <Footer username= "Assadawoot Poprakod" email="awboy005@gmail.com"/>
+           <Footer />
 
         </div>
     );
