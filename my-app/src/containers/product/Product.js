@@ -6,13 +6,25 @@ import axios from "axios"
 
 
 
-class Product extends Component{
+class Product extends React.Component{
 
 
  constructor(props){
     super(props)
     this.state = {products: null}
     this.delProduct = this.delProduct.bind(this)
+
+    //Reactstrep Navbar
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+        isOpen: false
+    } 
+}
+
+toggle(){
+    this.setState({
+        isOpen: !this.state.isOpen
+    })
 }
 
 componentDidMount(){

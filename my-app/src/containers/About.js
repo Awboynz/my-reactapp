@@ -7,9 +7,8 @@ return(
     <div>
         <Header />
             <div className="container col-md-5">
-                <h3>เกี่ยวกับเรา</h3>
-                <p>Test Description</p>
-                <h4>Test Description</h4>
+                <h3>About us</h3>
+                <p>เวปไซท์เกี่ยวกับการขายกาแฟ เค๊ก อาหารทานเล่นต่างๆ</p>
             </div>
         <Footer username= "Assadawoot Poprakod" email="awboy005@gmail.com"/>
     </div>

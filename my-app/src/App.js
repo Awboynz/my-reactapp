@@ -10,7 +10,6 @@ import Product from "./containers/product/Product"
 
 class App extends Component {
 
-
     renderRouter(){
       return(
         <Switch>
@@ -29,6 +28,5 @@ class App extends Component {
     }
 
 }
-
 
 export default App;
