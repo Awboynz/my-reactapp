@@ -58,8 +58,8 @@ export class Header extends Component {
                   <h5 className="text-muted mt-4">{this.state.date.toLocaleTimeString()}</h5>
             
               <div>
-          <Navbar light expand="lg">
-            
+         
+          < Navbar light expand="lg"> 
             <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
