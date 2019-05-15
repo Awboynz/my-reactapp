@@ -6,7 +6,7 @@ import axios from "axios"
 
 
 
-class Product extends React.Component{
+class Product extends Component{
 
 
  constructor(props){
@@ -25,7 +25,7 @@ toggle(){
     this.setState({
         isOpen: !this.state.isOpen
     })
-}
+} 
 
 componentDidMount(){
     axios.get("http://localhost:3001/products").then(res =>{

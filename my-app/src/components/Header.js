@@ -4,7 +4,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+ /*  NavbarBrand, */
   Nav,
   NavItem,
   NavLink,
@@ -32,7 +32,7 @@ export class Header extends Component {
   tick(){
     this.setState({date : new Date()});
     this.toggle = this.toggle.bind(this)
-    this.state = {
+    this.State = {
       isOpen: false
     }
   }
@@ -58,13 +58,13 @@ export class Header extends Component {
                   <h5 className="text-muted mt-4">{this.state.date.toLocaleTimeString()}</h5>
             
               <div>
-          <Navbar bg-light light expand="lg">
+          <Navbar light expand="lg">
             
             <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                  <NavLink active href="/">Home</NavLink>
+                  <NavLink href="/" active>Home</NavLink>
               </NavItem>
               <NavItem>
                   <NavLink active href="/orders">orders</NavLink>

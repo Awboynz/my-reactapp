@@ -8,7 +8,7 @@ const Footer = (props) => {
             <hr />
             <div className="text-center title text-uppercase">
             <small>
-                <span className="text-danger">Name:</span> {username} <span className="text-muted">| Contact: </span>{email}
+                <span className="text-danger">Name: Assadawoot Poprakod</span> {username} <span className="text-muted">| Contact: assadawootboy@gmail.com </span>{email}
             </small>
             </div>
         </div>
