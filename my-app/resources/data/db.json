@@ -37,5 +37,38 @@
       "thumbnail": "/images/product/6.jpg"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "orderedDate": "2019-05-15T09:55:40.086Z",
+      "totalPrice": 100,
+      "orders": [
+        {
+          "product": {
+            "id": 2,
+            "productName": "ไก่ทอด",
+            "unitPrice": "100",
+            "thumbnail": "/images/product/2.jpg"
+          },
+          "quantity": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderedDate": "2019-05-15T10:05:17.012Z",
+      "totalPrice": 170,
+      "orders": [
+        {
+          "product": {
+            "id": 4,
+            "productName": "เฟรนฟราย",
+            "unitPrice": "85",
+            "thumbnail": "/images/product/4.jpg"
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 2
+    }
+  ]
 }

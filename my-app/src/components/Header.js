@@ -1,6 +1,7 @@
 import React, { Component } from "react" 
 import {
-  
+  Badge,
+  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -9,6 +10,7 @@ import {
   NavItem,
   NavLink,
    } from 'reactstrap';
+
 
 export class Header extends Component {
 
@@ -32,6 +34,7 @@ export class Header extends Component {
   tick(){
     this.setState({date : new Date()});
     this.toggle = this.toggle.bind(this)
+  
     this.State = {
       isOpen: false
     }
@@ -43,6 +46,9 @@ export class Header extends Component {
     })
   }
 
+
+       
+  
   render() {
     const style = {height : 70}
   
@@ -59,7 +65,7 @@ export class Header extends Component {
             
               <div>
          
-          < Navbar light expand="lg"> 
+          < Navbar light expand="lg" justify-content-between  > 
             <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -75,12 +81,14 @@ export class Header extends Component {
               <NavItem>
                   <NavLink active href="/about">about</NavLink>
               </NavItem>
+              <div>
+                <Button color="primary" outline>
+                    Cart <Badge color="secondary"></Badge></Button>
+              </div>
             </Nav>
           </Collapse>
         </Navbar>
       </div>
-
-
 
               </div>
           </div>
