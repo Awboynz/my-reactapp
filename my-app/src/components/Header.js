@@ -7,9 +7,11 @@ import {
   NavbarToggler,
  /*  NavbarBrand, */
   Nav,
-  NavItem,
-  NavLink,
+/*   NavItem,
+  NavLink, */
    } from 'reactstrap';
+   import axios from "axios"
+  /*  import Order from "../containers/order/Order"; */
 
 
 export class Header extends Component {
@@ -22,8 +24,14 @@ export class Header extends Component {
 
   componentDidMount() {
     //setInterval(() => this.tick(), 1000);
-    console.log('componentDidMount');
-  }
+    /* console.log('componentDidMount'); */
+    axios.get("http://localhost:3001/orders").then(res =>{
+        this.setState(() => { 
+        return {orders: res.data } 
+        })
+        })
+      }
+
 
   componentDidUpdate(){
     console.log('componentDidUpdate');
@@ -34,6 +42,7 @@ export class Header extends Component {
   tick(){
     this.setState({date : new Date()});
     this.toggle = this.toggle.bind(this)
+    
   
     this.State = {
       isOpen: false
@@ -45,10 +54,13 @@ export class Header extends Component {
       isOpen: !this.state.isOpen
     })
   }
-
-
-       
+                       
+  showordernoti(){
+      if(this.state.orders !== null && this.state.orders !== undefined)
+      return this.state.orders.length
+  }
   
+
   render() {
     const style = {height : 70}
   
@@ -65,26 +77,26 @@ export class Header extends Component {
             
               <div>
          
-          < Navbar light expand="lg" justify-content-between  > 
+          < Navbar light expand="lg" > 
             <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
+              {/* <NavItem>
                   <NavLink href="/" active>Home</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink active href="/orders">orders</NavLink>
-              </NavItem>
-              <NavItem>
-                 <NavLink  active href="/products">products</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink active href="/about">about</NavLink>
-              </NavItem>
-              <div>
-                <Button color="primary" outline>
-                    Cart <Badge color="secondary"></Badge></Button>
-              </div>
+              </NavItem> */}
+
+              <Button color="primary" outline  href="/">
+                  HOME <Badge color="primary"></Badge>
+              </Button>
+              <Button color="primary" outline  href="/orders">
+                  Orders <Badge color="primary">{this.showordernoti()}</Badge>
+              </Button>
+              <Button color="primary" outline  href="/products">
+                  Products <Badge color="primary"></Badge>
+              </Button>
+              <Button color="primary" outline  href="/about">
+                  About <Badge color="primary"></Badge>
+              </Button>
             </Nav>
           </Collapse>
         </Navbar>
