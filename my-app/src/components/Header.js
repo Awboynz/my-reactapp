@@ -34,8 +34,9 @@ export class Header extends Component {
 
 
   componentDidUpdate(){
-    console.log('componentDidUpdate');
-
+      /* if(this.state.orders > 0){
+        return {orders: }
+      } */
   }
 
   //Set State เพื่อเรียกใช้งานการอัพเดตเวลา
