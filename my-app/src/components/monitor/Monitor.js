@@ -20,9 +20,9 @@ class Monitor extends Component{
     //Function เพิ่ม Product
     addOrder(product) {
         
-        let findOrder = this.state.orders.find(order => order.product.productId === product.productId);
+        let findOrder = this.state.orders.find(order => order.product.id === product.id);
 
-        /*เปรียบเทียบค่าใน Array ว่าใน Product เท่ากับ ProductId หรือไม่ ถ้าใช่ให้เพิ่ม */
+        /*เปรียบเทียบค่าใน Array ว่าใน Product เท่ากับ id หรือไม่ ถ้าใช่ให้เพิ่ม */
         if(findOrder) {
             //ถ้าใช่ให้+ quantity
             findOrder.quantity++;
@@ -38,14 +38,14 @@ class Monitor extends Component{
 
     //Function ลบ Product
     delOrder(product){
-        let findOrder = this.state.orders.find(order => order.product.productId === product.productId);
+        let findOrder = this.state.orders.find(order => order.product.id === product.id);
         let resultOrder
 
         if(findOrder.quantity > 1){
             findOrder.quantity--
             resultOrder = this.state.orders
         } else{       
-            resultOrder = this.state.orders.filter(order => order.product.productId !== product.productId)
+            resultOrder = this.state.orders.filter(order => order.product.id !== product.id)
         }
         let totalPrice = this.state.totalPrice - parseInt(findOrder.product.unitPrice)
         this.setState({totalPrice: totalPrice, orders: resultOrder, confirm:false})

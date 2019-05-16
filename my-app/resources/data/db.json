@@ -87,22 +87,6 @@
       "id": 3
     },
     {
-      "orderedDate": "2019-05-16T04:41:13.554Z",
-      "totalPrice": 100,
-      "orders": [
-        {
-          "product": {
-            "id": 2,
-            "productName": "ไก่ทอด",
-            "unitPrice": "100",
-            "thumbnail": "/images/product/2.jpg"
-          },
-          "quantity": 1
-        }
-      ],
-      "id": 4
-    },
-    {
       "orderedDate": "2019-05-16T04:44:17.976Z",
       "totalPrice": 700,
       "orders": [
@@ -117,6 +101,40 @@
         }
       ],
       "id": 5
+    },
+    {
+      "orderedDate": "2019-05-16T08:23:21.353Z",
+      "totalPrice": 570,
+      "orders": [
+        {
+          "product": {
+            "id": 3,
+            "productName": "บิงซู",
+            "unitPrice": "300",
+            "thumbnail": "/images/product/3.jpg"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": 4,
+            "productName": "เฟรนฟราย",
+            "unitPrice": "85",
+            "thumbnail": "/images/product/4.jpg"
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "productName": "ไก่ทอด",
+            "unitPrice": "100",
+            "thumbnail": "/images/product/2.jpg"
+          },
+          "quantity": 1
+        }
+      ],
+      "id": 6
     }
   ]
 }
