@@ -26,18 +26,14 @@ export class Header extends Component {
     //setInterval(() => this.tick(), 1000);
     /* console.log('componentDidMount'); */
     axios.get("http://localhost:3001/orders").then(res =>{
+
+        /* SetState ให้กับ res.data เพื่อนำไปใช้ */
         this.setState(() => { 
         return {orders: res.data } 
         })
         })
       }
 
-
-  componentDidUpdate(){
-      /* if(this.state.orders > 0){
-        return {orders: }
-      } */
-  }
 
   //Set State เพื่อเรียกใช้งานการอัพเดตเวลา
   tick(){
@@ -56,9 +52,16 @@ export class Header extends Component {
     })
   }
                        
+  /* แสดง Notification เมื่อผู้ใช้กดซื้อสินค้า */
   showordernoti(){
+      /* เช็คว่า orders ไม่เท่ากับ null และ undefined */
       if(this.state.orders !== null && this.state.orders !== undefined)
+
+      /* return เพื่อให้เรียกใช้  */
       return this.state.orders.length
+  }
+  refreshPage(){
+    window.location.reload()
   }
   
 

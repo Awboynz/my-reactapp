@@ -52,6 +52,10 @@ class Monitor extends Component{
      }
     
 
+     refreshPage(){
+         window.location.reload();
+     }
+
      // Confirm Order >> กดปุ่ม ตกลง 
          confirmOrder(){
           const { totalPrice, orders } = this.state;
@@ -60,6 +64,7 @@ class Monitor extends Component{
           axios.post("http://localhost:3001/orders", {orderedDate: new Date(), totalPrice, orders})
           .then(res => {
              this.setState({totalPrice: 0, orders: [], confirm: true, msg:("สั่งซื้อสำเร็จ")})
+             this.refreshPage()
          })
         }else   {
             this.setState({totalPrice: 0, orders: [], confirm: true, msg: ("สั่งซื้อสำเร็จ")})

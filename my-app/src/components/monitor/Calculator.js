@@ -7,9 +7,8 @@ class Calculator extends Component {
             return <li className="text-right text-muted title">ไม่ได้เลือกสินค้า</li>
         } else {
             return orders.map(order => {
-
                 return (
-                    <li className="text-right text-dark title">
+                    <li key = {order.product.id} className="text-right text-dark title">
                         <strong><span className="text-uppercase">{order.product.productName} x {order.quantity} = </span></strong>
 
                         {/* จัดการ style ของราคายอดรวม */}
