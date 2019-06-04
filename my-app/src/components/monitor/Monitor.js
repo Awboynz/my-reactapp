@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Calculator from "./Calculator"
 import ProductList from "../product/ProductList"
 import axios from "axios"
+
 /* import Popup from 'react-popup';
 import Button from "reactstrap/lib/Button"; */
 
@@ -73,6 +74,7 @@ class Monitor extends Component{
 
 
     render(){
+
         return (
              <div className="container-fluid">
                 {this.state.confirm &&
@@ -81,12 +83,12 @@ class Monitor extends Component{
                 </div>
                 }  
 
-            <div className="container-fluid">
+            <div  className="container-fluid">
                 <div className="row">
                     <div className="col-md-9">
                         <ProductList products={this.props.products}  onAddOrder={this.addOrder} />
                     </div>
-                    <div className="col-md-3">
+            <div className="col-md-3">
                         <Calculator totalPrice={this.state.totalPrice} orders={this.state.orders} onDelOrder={this.delOrder} onCancelOrder={this.cancelOrder} onConfirmOrder={this.confirmOrder}  />
                     </div>
                 </div>
