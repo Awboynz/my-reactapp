@@ -9,7 +9,7 @@ class Calculator extends Component {
             return orders.map(order => {
 
                 return (
-                    <li key = {orders.id} className="text-right text-dark title">
+                    <li className="text-right text-dark title">
                         <strong><span className="text-uppercase">{order.product.productName} x {order.quantity} = </span></strong>
 
                         {/* จัดการ style ของราคายอดรวม */}
