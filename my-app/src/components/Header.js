@@ -1,4 +1,4 @@
-import React, { Component } from "react" 
+ import React, { Component } from "react" 
 import {
   Badge,
   Button,
@@ -61,6 +61,7 @@ export class Header extends Component {
       return this.state.orders.length
   }
   refreshPage(){
+    
     window.location.reload()
   }
   
