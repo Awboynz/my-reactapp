@@ -56,7 +56,6 @@ class Order extends Component {
         })
     }
 
-
     render(){
         return (
             <div>
