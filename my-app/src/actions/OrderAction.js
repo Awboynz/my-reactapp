@@ -19,7 +19,7 @@ export const ordersFetch= () => {
 /* action ลบ ต้องป้อน id ที่ต้องการลบ  */
 export const orderDelete = id => {
     return dispatch => {
-        axios.delete("http://localhost:3001/orders" + id).then(res => {
+        axios.delete("http://localhost:3001/orders/" + id).then(res => {
 
             /* หลังจากลบไปแล้ว เรียกข้อมูลที่มีการเปลี่ยนแปลงค่าล่าสุดมาจาก server */
             axios.get("http://localhost:3001/orders").then(
