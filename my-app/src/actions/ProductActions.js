@@ -18,7 +18,8 @@ export const productsFetch= () => {
 
 /* action ลบ ต้องป้อน id ที่ต้องการลบ  */
 export const productDelete = id => {
-    axios.delete("http://localhost:3001/products" + id).then(res => {
+    return dispatch => {
+        axios.delete("http://localhost:3001/products" + id).then(res => {
 
         /* หลังจากลบไปแล้ว เรียกข้อมูลที่มีการเปลี่ยนแปลงค่าล่าสุดมาจาก server */
         axios.get("http://localhost:3001/products").then(
@@ -26,4 +27,5 @@ export const productDelete = id => {
                 dispatch({ type : PRODUCTS_FETCH , payload : res.data})
         })
     })
+    }
 }

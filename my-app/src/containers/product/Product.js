@@ -2,7 +2,10 @@ import React, { Component } from "react"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import ProductList from "../../components/product/ProductList"
-import axios from "axios"
+/* import axios from "axios" */
+import {withRouter} from "react-router-dom"
+import { connect } from "react-redux"
+import { productsFetch, productDelete } from "../../actions"
 
 
 
@@ -28,20 +31,22 @@ toggle(){
 } 
 
 componentDidMount(){
-    axios.get("http://localhost:3001/products").then(res =>{
+   /*  axios.get("http://localhost:3001/products").then(res =>{
         this.setState({products: res.data})
-    })
+    }) */
+    this.props.productsFetch()
 }
 
 delProduct(product){
-    axios.delete("http://localhost:3001/products/"+ product.id ).then(
+    /* axios.delete("http://localhost:3001/products/"+ product.id ).then(
         res=> {
             axios.get("http://localhost:3001/products").then(
                 res =>{
                     this.setState({products: res.data})    
                 }
             )
-        })
+        }) */
+        this.props.productDelete(product.id)
 }
 
 render() {
@@ -57,7 +62,9 @@ render() {
                          <button className="btn btn-success title float-right">เพิ่มสินค้า</button>
                     </div>
                 </div>
-                     <ProductList products={this.state.products} 
+                     {/* <ProductList products={this.state.products}  */}
+                     <ProductList products={this.props.products}
+                     
                     onDelProduct={this.delProduct}
                     />
             </div>
@@ -66,5 +73,11 @@ render() {
         )
     } 
 }
+
+function mapStateToProps(state){
+    console.log(state)
+    return {products: state.products}
+
+}
   
-export default Product
+export default withRouter(connect(mapStateToProps, {productsFetch, productDelete})(Product))
